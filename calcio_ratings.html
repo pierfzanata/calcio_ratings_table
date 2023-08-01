@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>calcio_ratings</title>
+  <style>
+
+    .right-aligned {
+    text-align: right;
+    }
+      
+    body {
+      background-color: #b9d3ff;
+      font-family: "Times New Roman", Times, serif;
+      text-align: left;
+      margin: 50px;
+      padding: 22px;
+    }
+    
+    h1 {
+      font-size: 25px;
+      color: black;
+    }
+    
+    p {
+      font-size: 15px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Rating offensivi, difensivi e comparati; un metodo per analizzare la performance dei calciatori</h1>
+
+  <br><br>
+
+  <p>Valutare le prestazioni di un giocatore attraverso i numeri è sempre stata una sfida difficile per tutti gli appassionati di calcio.<br>
+Per il portiere si può fare quasi un discorso a parte, perché che il suo compito è completamente diverso rispetto a quello dei giocatori di movimento;<br>
+in un estremo difensore si possono considerare diversi fattori tra cui percentuale di parate, percentuale di gol subiti dalla palle da fermo (anche se talvolta la colpa è attribuibile alla cattiva marcatura dell'attaccante), percentuale di rigori parati.
+Valutare un portiere con le statistiche può non essere molto complicato, ma visto il ruolo particolare che esso svolge, gli sforzi fatti dagli appassionati per cercare di trovare nei numeri la risposta alle loro domande si concentra di solito sui restanti dieci giocatori della squadra.<br>
+Per i giocatori di movimento, una statistica particolarmente usata è quella dei <b>gol + assist</b> (magari rapportati per 90 minuti), che in teoria fornisce un'idea dell'impatto offensivo di un giocatore;
+se è vero che la somma di gol e assist può dare un'idea della bontà delle prestazioni di un attacante, lo stesso non si può dire per i difensori o i mediani; se realizzare gol è compito dei giocatori offensivi, un allenatore sarà più interessato al fatto che i suoi giocatori difensivi non permettano all'avversario di segnare;
+nessun allenatore preferisce a un difensore solido e roccioso con zero gol segnati a stagione, uno che realizza 3 o 4 reti da palla inattiva che però presenta lacune in termini di marcatura e tempismo negli interventi, dato che i gol "evitabili" che concederà nel corso della stagione saranno probabilmente molti di più rispetto a quelli che realizza.<br>
+Tornando ai giocatori offensivi, <b>non è detto che un buon attaccante debba per forza segnare tanti gol o fornire tanti assist</b>; magari facilita la manovra offensiva della squadra in maniera decisiva, pur non essendo il protagonista primario delle marcature.<br>
+Le statistiche per valutare i difensori restano quasi una chimera nel mondo del calcio: numeri come i dribbling subiti o contrasti aerei vinti non sono facili da reperire e non tengono conto del fatto che certe squadre tendono a passare molto più tempo nella propria metà campo rispetto ad altre;
+tutto questo senza tenere conto del fatto che subire un dribbling da ultimo uomo sullo 0-0 è molto più grave rispetto a una situazione con due o tre gol di vantaggio.</p>
+
+  <p>Questo incipit forse un po' banale è per spiegare quanto lontani siamo nel mondo del calcio dall'usare i numeri per capire l'impatto di un giocatore.<br>
+In altri sport di squadra non è così. Nel baseball e football americano le statistiche forniscono un quadro pressochè completo della prestazione di un giocatore; tuttavia in questi sport la fase offensiva e difensiva di una squadra si svolgono separatamente, con giocatori diversi.
+Nel baseball i battitori sono i protagonisti della fase offensiva, mentre quella difensiva è quasi esclusivamente nelle mani del (o dei) lanciatore(i). Nel football americano addiritura scendono in campo due squadre separate, una per l'attacco e una per la difesa.
+Se nel calcio ci sono certamente giocatori specializzati nella fase difensiva e altri nella fase offensiva, ogni azione di gioco si svolge sempre con tutti i giocatori in campo potenzialmente coinvolti.<br>
+Viene quindi naturale guardare alla pallacanestro, che ha le stesse caratteristiche, pur essendo molto più adatta a studi statistici perchè si alternano decine di brevi azioni offensive da parte di entrambe le squadre, evitando tutti quelli che nel calcio identifichiamo come "tempi morti" (che poi occupano gran parte dei 90 minuti).
+Determinare l'impatto offensivo di un cestista con i numeri è naturale per analisti e appassionati: oltre a punti, rimbalzi e assist, è quasi d'obbligo citare le percentuali al tiro.
+Per la fase difensiva non c'è altrettanta semplicità; i dati realtivi a stoppate, palle recuperate e perse sono solo relativamente utili.<br>
+Se i tradizionali box-score delle partite di pallacanestro non rendono giustizia a buone prestazioni difensive, punti, rimbalzi, assist, stoppate, palle recuperate e perse, percentuali al tiro, forniscono un quadro completo della prestazione offensiva di un giocatore.<br>
+Un'altra statistica interessante è il plus-minus; in uno sport dove un singolo giocatore può uscire e rientrare più volte nella stessa partita, <b>il plus-minus misura la differenza tra punti fatti e subiti dalla squadra quando un certo giocatore è in campo</b>.
+Dividendo il plus-minus per i minuti in campo del giocatore e moltiplicando per il numero di minuti totali della partita, si ottiene il differenziale tra punti fatti e subiti quando quel giocatore è in campo, rapportato nell'arco dell'intera gara.</p>
+
+  <br><br>
+
+  <p>Da qui nasce l'idea di creare un sistema simile per il calcio, esteso per un intero campionato (nella singola partita ha poco significato visto che un singolo giocatore può essere sostituito una sola volta).
+Immaginando un'intera stagione di 38 partite come un'unica, grande partita dove il calciatore gioca una certa quantità di minuti e non il resto, si può semplicemente contare il numero di gol segnati e subiti da una squadra quando un certo giocatore è in campo.<br>
+Dividendo il numero di gol segnati e subiti per il numero di minuti in una partita e moltiplicando per i minuti giocati dal calciatore, si ottengono <b>il numero di gol segnati e subiti dalla squadra per 90 minuti quando un certo giocatore è in campo</b>.<br>
+Per fare un esempio, la scorsa stagione Matteo Politano del Napoli ha giocato 1164 minuti sui 3420 disponibili.
+Con Politano in campo, il Napoli ha segnato 22 gol e ne ha subiti 12; quindi il giocatore ha un rating offensivo di 22 * 90 / 1164 = 1.70 e un rating difensivo di 12 * 90 / 1164 = 0.93.<br>
+Possiamo calcolare il rating generale come differenza tra il rating offensivo e quello difensivo, in questo caso 1.70 - 0.93 = 0.77.<br>
+<p><b><a href="https://ibb.co/Wf68PB7" target="_blank">Il grafico con i rating offensivi e difensivi di tutti i giocatori con almeno 342 minuti in campo nella Serie A 2022-23</a>.<br>
+<i>Il rating offensivo si trova sull'asse orizzontale e cresce (quindi migliora) da sinistra verso destra; il rating difensivo è sull'asse verticale e decresce (migliora) dal basso verso l'alto.<br>
+Le linee rosse tratteggiate rappresentano la media di gol segnati e subiti in tutte le partite. I giocatori al di sopra della linea diagonale punteggiata hanno un rating generale positivo, quelli al di sotto negativo.</i></b></p>
+
+  <p><b>Un appunto sulla soglia del minutaggio: la metodologia con cui vengono calcolati i rating rischia di generare valori esageratamente alti o bassi per i giocatori che hanno giocato un numero particolarmente basso di minuti</b>.<br>
+Un caso esemplare è quello di Paul Pogba della Juventus; in 108 minuti giocati in campionato con Pogba in campo, la Juventus ha segnato 3 gol senza subirne nessuno.
+Questo porterebbe il suo rating offensivo a 2.50, quello difensivo a 0.00, per un rating generale di 2.50, che lo porrebbe ai primissimi posti tra i giocatori di Serie A.<br>
+Per quanto Pogba sia un ottimo giocatore, questi numeri non possono essere significativi, dato che prendono a campione solo il 3% dei minuti totali giocati dalla Juventus in campionato, e non possono essere paragonati a quelli di giocatori con 1000, 2000 o 3000 minuti in campo.<br>
+Ho individuato due soglie plausibili per individuare il minutaggio minimo affinchè un giocatore rientri tra quelli analizzati: la prima è del 10% dei minuti totali (quindi 342 minuti; sono 450 giocatori in totale), ma dato che anche tra giocatori con 400 o 500 minuti in campo sono presenti <i>outliers</i> importanti, ne ho introdotta una seconda del 20% (684 minuti, che comprende 390 giocatori).<br>
+<a href="https://ibb.co/ZLDqJR5" target="_blank">Il grafico con i rating offensivi e difensivi di tutti i giocatori con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br></p>
+
+  <p><b>Di seguito, alcuni grafici che mostrano i rating offensivi e difensivi dei giocatori suddivisi per ruolo:</b><br>
+<a href="https://ibb.co/y06BzSd" target="_blank">Il grafico con i rating offensivi e difensivi di tutti i difensori con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br>
+<a href="https://ibb.co/1QsKxwL" target="_blank">Il grafico con i rating offensivi e difensivi di tutti i centrocampisti con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br>
+<a href="https://ibb.co/j49Yr7R" target="_blank">Il grafico con i rating offensivi e difensivi di tutti gli attaccanti con almeno 684 minuti in campo nella Serie A 2022-23.</a></p>
+
+  <br><br>
+
+  <p><b><a href="https://ibb.co/C1Fj5Zb" target="_blank">Il concetto di rating offensivo e difensivo si può facilmente applicare ad un'intera squadra, e sarà equivalente al numero di gol segnati e subiti per partita.</a></b><br>
+Da qui si può intuire che <b>più un giocatore ha passato tempo in campo, più i suoi rating saranno simili a quelli della squadra nel suo complesso</b>; nel caso limite, un giocatore che ha passato tutti i 3420 minuti in campo, avrà rating offensivo e difensivo identici a quelli della sua squadra.<br>
+Quindi il rating offensivo e difensivo di un giocatore dipende non solo da suo impatto nella squadra ma anche (e soprattutto) dalle prestazioni generali della squadra (in fondo il singolo giocatore non è che 1/11esimo della squadra schierata in campo).</p>
+
+  <p>Al fine di "sganciare" la prestazione del giocatore da quella del resto della squadra, sembra logico <b>confrontare le prestazioni della squadra quando il giocatore è in campo rispetto a quando non è in campo.</b><br>
+Se una squadra segna di più quando un certo giocatore è in campo rispetto a quando è fuori, quel giocatore ha un impatto offensivo positivo per la squadra.<br>
+Analogamente, se la squadra subisce di meno quando un certo giocatore è in campo rispetto a quando è fuori, il giocatore ha un impatto difensivo positivo per la squadra.</p>
+
+Prendiamo ad esempio il giocatore citato in precedenza, Matteo Politano del Napoli.<br>
+Possiamo calcolare il rating generale del giocatore sottraendo dal rating offensivo il rating difensivo: 1.70 - 0.93 = 0.77 è la <b>differenza reti per 90 minuti</b> del Napoli con Politano in campo, un valore certamente molto positivo in termini assoluti (la squadra "Napoli con Politano" sarebbe terza in Serie A in termini di rating generale).<br>
+Ma confrontiamolo con i numeri del Napoli quando Politano non è in campo: sono 55 gol segnati e 16 subiti in 2256 minuti, che risultano in un rating offensivo di 2.19 e un rating difensivo di 0.64, con un rating generale di 1.55.
+Risulta quindi che in realtà il Napoli ha giocato molto meglio quando Politano era in panchina rispetto a quando giocava: con Politano in campo, il rating offensivo scende di 2.19 - 1.70 = 0.49, il rating difensivo di 0.93 - 0.64 = 0.29, mentre il rating generale cala di 1.55 - 0.77 = 0.78 gol.<br>
+Questi nuovi rating, che chiamerò <b>rating comparati, sono quindi molto più utili dei rating tradizionali per confrontare tra loro i giocatori, dato che annullano il "contesto squadra".</b></p>
+<b><a href="https://ibb.co/VL2G3zP" target="_blank">Il grafico con i rating comparati offensivi e difensivi di tutti i giocatori con almeno 342 minuti in campo nella Serie A 2022-23</a>.<br>
+<i>Il rating comparato offensivo si trova sull'asse orizzontale e cresce (quindi migliora) da sinistra verso destra; il rating comparato difensivo è sull'asse verticale e decresce (migliora) dal basso verso l'alto.<br>
+Le linee rosse tratteggiate intersecano lo zero in entrambi gli assi, e rappresentano la soglia tra un impatto offensivo/difensivo positivo e negativo. I giocatori al di sopra della linea diagonale punteggiata hanno un rating generale positivo, quelli al di sotto negativo.</i></b></p>
+
+  <p>Per fare un esempio di ciò, confrontiamo il sopracitato Matteo Politano del Napoli con Daniel Ciofani della Cremonese (per facilitare la lettura, nelle formule chiamerò i rating <i>OffRat</i> per l'offensivo, <i>DefRat</i> per il difensivo, <i>Rat</i> per il totale. Allo stesso modo, i rating comparati saranno invece <i>COffR</i>, <i>CDefR</i> e <i>CRat</i>).<br>
+Ciofani ha giocato 1049 minuti in campionato; con lui in campo, la Cremonese ha segnato 18 gol e ne ha subiti 21; senza di lui, in 2371 minuti, sono 18 i gol segnati, 48 quelli subiti.<br>
+Prendiamo prima i rating assoluti, espressi come <i>OffRat - DefRat = Rat</i>: per Politano, abbiamo 1.70 - 0.93 = 0.77, per Ciofani 1.54 - 1.80 = -0.26.<br>
+Nonostante Politano superi Ciofani nel rating offensivo, difensivo e generale, sembra evidente che, almeno a livello offensivo, Ciofani abbia avuto un impatto molto più positivo sulla sua squadra: i rating offensivi dei due giocatori differiscono solo di 0.14 nonostante il Napoli abbia segnato più del doppio dei gol della Cremonese (e quindi il rating offensivo del Napoli superi quello della Cremonese di un valore superiore a 1.00).<br>
+Usando i rating comparati infatti, nella forma <i>COffR - CDefR = CRat</i>, abbiamo -0.40 + (-0.29) = -0.78 per Politano e 0.86 +  0.02 = +0.88 per Ciofani.<br>
+Se il Napoli con Politano ha una differenza reti per 90 minuti di -0.78 rispetto a quando non è in campo, la statistica per la Cremonese con Ciofani in campo è di +0.88 rispetto a quando non è in campo.</p>
+
+  <p>Altro appunto sulla soglia del minutaggio, per quanto riguarda i rating comparati: dato che vengono presi in considerazione non solo i gol segnati e subiti quando il giocatore è in campo, ma anche quando non è in campo, <b>è necessario che la soglia che definisce il minutaggio minimo si applichi anche al minutaggio massimo.</b><br>
+Ad esempio Federico Baschirotto del Lecce (uno dei soli 13 giocatori di movimento ad aver collezionato più di 3000 minuti in campo), ha giocato 3330 minuti in campionato (quindi saltando una sola partita e giocando dall'inizio alla fine tutte le altre).<br>
+I rating di Baschirotto saranno quindi quasi uguali a quelli della sua squadra.
+Ma dato che nell'unica partita non giocata da Baschirotto il Lecce ha perso 2-0, i suoi rating comparati nella forma <i>COffR - CDefR = CRat</i> saranno 0.89 + 0.81 = 1.70; sono numeri plausibili, ma non ha senso concludere che il Lecce gioca 1.70 gol per 90 minuti meglio con Baschirotto in campo, basandosi su soli 90 minuti in un campionato da 3420.<br>
+Allo stesso modo per cui i rating con minutaggi troppo bassi generano valori "sballati", lo stesso si può affermare per <b>rating comparati dove ad essere troppo basso è il minutaggio senza uno specifico giocatore in campo.</b><br>
+Le soglie saranno quindi "simmetriche": quella con minimo del 10% avrà massimo del 90% (quindi non meno di 342 minuti ma non più di 3078; sono 433 giocatori in totale), mentre quella del 20% avrà massimo del 80% (minimo 684 minuti, massimo 2736, per un totale di 333 giocatori).</p>
+
+  <p><b>Di seguito, alcuni grafici che mostrano i rating comparati offensivi e difensivi dei giocatori suddivisi in varie categorie:</b><br>
+<a href="https://ibb.co/MsqK9X5" target="_blank">Il grafico con i rating comparati offensivi e difensivi di tutti i difensori con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br>
+<a href="https://ibb.co/F0sZbqN"_blank">Il grafico con i rating comparati offensivi e difensivi di tutti i centrocampisti con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br>
+<a href="https://ibb.co/BnyhyJS"_blank">Il grafico con i rating comparati offensivi e difensivi di tutti gli attaccanti con almeno 684 minuti in campo nella Serie A 2022-23.</a><br>
+<a href="https://ibb.co/r6HWSy4"_blank">Il grafico con i rating comparati offensivi e difensivi di tutti i giocatori italiani con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br>
+<a href="https://ibb.co/NV4sphh"_blank">Il grafico con i rating comparati offensivi e difensivi di tutti gli under 25 con almeno 684 minuti in campo nella Serie A 2022-23</a>.<br></p>
+
+  <br><br>
+
+  <p>Se il metodo dei rating può presentare dei limiti, è indubbio che (e questo vale in particolare per i rating comparati) si tratta di una metodo univoco e universale per confrontare tra loro quasi tutti i giocatori del campionato e può risultare interessante per chiunque voglia usare i numeri per valutare le prestazioni dei giocatori.</p>
+
+  <br><br>
+  <br><br>
+  <br><br>
+ 
+  <p class="right-aligned"><i>Pierfrancesco Zanata, 31 Luglio 2023</i></p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
